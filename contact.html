@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>NIKE | Contact</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="logo">NIKE</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="shop.html">Shop</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="cart.html" class="cart-icon">🛒<span class="cart-count">0</span></a>
+    </nav>
+  </header>
+
+  <section class="contact">
+    <h2>Contact Us</h2>
+    <form id="contactForm">
+      <input type="text" id="name" placeholder="Your Name" required />
+      <input type="email" id="email" placeholder="Your Email" required />
+      <textarea id="message" placeholder="Your Message" rows="5" required></textarea>
+      <button type="submit">Send Message</button>
+      <p id="contact-message" class="contact-confirmation"></p>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 NIKE. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Handle form submission
+    document.getElementById("contactForm").addEventListener("submit", function (e) {
+      e.preventDefault(); // prevent page reload
+
+      // Optional: Get form values (not needed here but shows how)
+      const name = document.getElementById("name").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const message = document.getElementById("message").value.trim();
+
+      if (!name || !email || !message) {
+        alert("Please fill in all fields.");
+        return;
+      }
+
+      // Show confirmation message
+      const confirmation = document.getElementById("contact-message");
+      confirmation.textContent = "✅ Your message has been sent successfully!";
+      confirmation.style.color = "green";
+
+      // Reset the form
+      document.getElementById("contactForm").reset();
+    });
+
+    // Update cart count if needed
+    document.addEventListener("DOMContentLoaded", () => {
+      const cart = JSON.parse(localStorage.getItem("cart")) || [];
+      document.querySelector(".cart-count").textContent = cart.length;
+    });
+  </script>
+</body>
+</html>

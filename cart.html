@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Nike | Cart</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="logo">NIKE</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="shop.html">Shop</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="cart.html" class="cart-icon">🛒<span class="cart-count">0</span></a>
+    </nav>
+  </header>
+
+  <section class="cart-page">
+    <h2>Your Cart</h2>
+    <div id="cart-items"></div>
+    <div id="cart-total"></div>
+
+    <div class="cart-actions">
+      <button onclick="placeOrder()" class="place-order-btn">Place Order</button>
+      <p id="order-message" class="order-message"></p>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 NIKE. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function loadCartItems() {
+      const cart = JSON.parse(localStorage.getItem("cart")) || [];
+      const cartItemsDiv = document.getElementById("cart-items");
+      const cartTotalDiv = document.getElementById("cart-total");
+      const cartCount = document.querySelector(".cart-count");
+
+      cartItemsDiv.innerHTML = "";
+      let total = 0;
+
+      if (cart.length === 0) {
+        cartItemsDiv.innerHTML = "<p>Your cart is empty.</p>";
+        cartTotalDiv.innerHTML = "";
+        cartCount.textContent = "0";
+        return;
+      }
+
+      cart.forEach((item, index) => {
+        const itemDiv = document.createElement("div");
+        itemDiv.classList.add("cart-item");
+        itemDiv.innerHTML = `
+          <p><strong>${item.name}</strong> – ₹${item.price}</p>
+          <button onclick="removeItem(${index})" class="remove-btn">Remove</button>
+        `;
+        cartItemsDiv.appendChild(itemDiv);
+        total += item.price;
+      });
+
+      cartTotalDiv.innerHTML = `<h3>Total: ₹${total}</h3>`;
+      cartCount.textContent = cart.length;
+    }
+
+    function removeItem(index) {
+      const cart = JSON.parse(localStorage.getItem("cart")) || [];
+      cart.splice(index, 1);
+      localStorage.setItem("cart", JSON.stringify(cart));
+      loadCartItems();
+    }
+
+    function updateCartCount() {
+      const cart = JSON.parse(localStorage.getItem("cart")) || [];
+      const cartCount = document.querySelector(".cart-count");
+      cartCount.textContent = cart.length;
+    }
+
+    function placeOrder() {
+      const cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+      if (cart.length === 0) {
+        alert("Your cart is empty.");
+        return;
+      }
+
+      localStorage.removeItem("cart");
+      loadCartItems();
+      updateCartCount();
+
+      const message = document.getElementById("order-message");
+      message.textContent = "✅ Your order has been placed successfully!";
+      message.style.color = "green";
+    }
+
+    // Load cart when page loads
+    document.addEventListener("DOMContentLoaded", () => {
+      loadCartItems();
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>NIKE | Shop</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="logo">NIKE</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="shop.html">Shop</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <div class="search-wrapper">
+        <input type="text" id="searchInput" placeholder="Search products..." />
+        <span class="search-icon">🔍</span>
+      </div>
+      <a href="cart.html" class="cart-icon">🛒<span class="cart-count">0</span></a>
+    </nav>
+  </header>
+
+  <section class="products">
+    <h2>Shop Our Collection</h2>
+    <div class="product-grid">
+      
+      <div class="product-card">
+        <img src="images/nike air max 90.webp" alt="Nike Air Max 90">
+        <h3>Nike Air Max 90</h3>
+        <p>₹7,999 – Retro running style with modern comfort.</p>
+        <button onclick="addToCart('Nike Air Max 90', 7999)" class="buy-btn">Buy Now</button>
+      </div>
+
+      <div class="product-card">
+        <img src="images/nike revolution.webp" alt="Nike Revolution 6">
+        <h3>Nike Revolution 6</h3>
+        <p>₹3,499 – Soft foam cushioning for everyday runs.</p>
+        <button onclick="addToCart('Nike Revolution 6', 3499)" class="buy-btn">Buy Now</button>
+      </div>
+
+      <div class="product-card">
+        <img src="images/nike hoodie.jpg" alt="Nike Hoodie">
+        <h3>Nike Hoodie</h3>
+        <p>₹2,899 – Comfortable fleece, winter-ready style.</p>
+        <button onclick="addToCart('Nike Hoodie', 2899)" class="buy-btn">Buy Now</button>
+      </div>
+
+      <div class="product-card">
+        <img src="images/nike gym bag.webp" alt="Nike Gym Bag">
+        <h3>Nike Gym Bag</h3>
+        <p>₹1,599 – Durable and sleek, built for athletes.</p>
+        <button onclick="addToCart('Nike Gym Bag', 1599)" class="buy-btn">Buy Now</button>
+      </div>
+
+      <div class="product-card">
+        <img src="images/nike sports bra.jpg" alt="Nike Sports Bra">
+        <h3>Nike Sports Bra</h3>
+        <p>₹999 – Lightweight and breathable support.</p>
+        <button onclick="addToCart('Nike Sports Bra', 999)" class="buy-btn">Buy Now</button>
+      </div>
+
+      <div class="product-card">
+        <img src="images/nike windrunner.png" alt="Nike Windrunner">
+        <h3>Nike Windrunner</h3>
+        <p>₹4,199 – Iconic lightweight running jacket.</p>
+        <button onclick="addToCart('Nike Windrunner', 4199)" class="buy-btn">Buy Now</button>
+      </div>
+
+      <div class="product-card">
+        <img src="images/nike compression and base layers.jpg" alt="Nike compression and base layers">
+        <h3>Nike compression and base layers</h3>
+        <p>₹4999 – Feels like a natural extension of your body.</p>
+        <button onclick="addToCart('Nike compression and base layers', 4999)" class="buy-btn">Buy Now</button>
+      </div>
+
+      <div class="product-card">
+        <img src="images/nike react infinity run.jpg" alt="Nike react infinity run">
+        <h3>Nike react infinity run</h3>
+        <p>₹3499 – Iconic lightweight running jacket.</p>
+        <button onclick="addToCart('Nike react infinity run', 3499)" class="buy-btn">Buy Now</button>
+      </div>
+
+      <div class="product-card">
+        <img src="images/nike shorts.jpg" alt="Nike shorts">
+        <h3>Nike shorts</h3>
+        <p>₹999 – Iconic lightweight running jacket.</p>
+        <button onclick="addToCart('Nike shorts', 999)" class="buy-btn">Buy Now</button>
+      </div>
+
+      <div class="product-card">
+        <img src="images/nike zoomx vaporfly elite.jpg" alt="Nike zoomx vaporfly elite">
+        <h3>Nike zoomx vaporfly elite</h3>
+        <p>₹5999– Iconic lightweight running jacket.</p>
+        <button onclick="addToCart('Nike shorts', 5999)" class="buy-btn">Buy Now</button>
+      </div>
+
+      <div class="product-card">
+        <img src="images/nike sports cap.webp" alt="Nike sports cap">
+        <h3>Nike sports cap</h3>
+        <p>₹499 – Iconic lightweight running jacket.</p>
+        <button onclick="addToCart('Nike sports cap', 499)" class="buy-btn">Buy Now</button>
+      </div>
+
+      <div class="product-card">
+        <img src="images/nike wide leg sweat pant for women.webp" alt="Nike wide leg sweat pant for women">
+        <h3>Nike wide leg sweat pant for women</h3>
+        <p>₹1199 – Ultra-soft fleece for cozy comfort.</p>
+        <button onclick="addToCart('Nike wide leg sweat pant for women', 1199)" class="buy-btn">Buy Now</button>
+      </div>
+
+      <div class="product-card">
+        <img src="images/nike pants and tights for women.jpg" alt="Nike pants and tights for women">
+        <h3>Nike pants and tights for women</h3>
+        <p>₹999 – sweat-wicking technology.</p>
+        <button onclick="addToCart('Nike pants and tights for women', 999)" class="buy-btn">Buy Now</button>
+      </div>
+
+      <div class="product-card">
+        <img src="images/nike FIT puffer.jpg" alt="Nike FIT puffer">
+        <h3>Nike FIT puffer</h3>
+        <p>₹2499 – Lightweight warmth without the bulk.</p>
+        <button onclick="addToCart('Nike FIT puffer', 2499)" class="buy-btn">Buy Now</button>
+      </div>
+
+      <div class="product-card">
+        <img src="images/nike jackets.webp" alt="Nike jackets">
+        <h3>Nike jackets</h3>
+        <p>₹3999 – Dri-FIT Technology for sweat control.</p>
+        <button onclick="addToCart('Nike jackets', 3999)" class="buy-btn">Buy Now</button>
+      </div>
+      <div class="product-card">
+        <img src="images/nike jersey.jpg" alt="Nike jersey">
+        <h3>Nike jersey</h3>
+        <p>₹1299 – Feels like part of your skin.</p>
+        <button onclick="addToCart('Nike jersey', 1299)" class="buy-btn">Buy Now</button>
+      </div>
+
+      <div class="product-card">
+        <img src="images/nike air max future.jpg" alt="Nike air max future">
+        <h3>Nike air max future</h3>
+        <p>₹8999– Reinvented comfort with every step.</p>
+        <button onclick="addToCart('Nike air max future', 8999)" class="buy-btn">Buy Now</button>
+      </div>
+
+ </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 NIKE. All rights reserved.</p>
+  </footer>
+
+  <!-- 🔍 Working Product Search -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const searchInput = document.getElementById("searchInput");
+      if (searchInput) {
+        searchInput.addEventListener("keyup", function () {
+          const query = this.value.toLowerCase();
+          const productCards = document.querySelectorAll(".product-card");
+          productCards.forEach(card => {
+            const name = card.querySelector("h3").textContent.toLowerCase();
+            card.style.display = name.includes(query) ? "block" : "none";
+          });
+        });
+      }
+    });
+  </script>
+
+  <!-- 🛒 Cart Functions -->
+  <script src="script.js"></script>
+</body>
+</html>
